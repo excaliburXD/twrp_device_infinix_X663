@@ -6,7 +6,7 @@ on:
       MANIFEST_BRANCH:
         description: 'TeamWin Manifest Branch'
         required: true
-        default: 'twrp-11'
+        default: 'twrp-12.1'
         type: choice
         options:
           - twrp-12.1
@@ -14,7 +14,7 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree URL'
         required: true
-        default: 'https://github.com/excaliburXD/twrp_device_infinix_X663/new/twrp-12.1.git'
+        default: 'https://github.com/excaliburXD/twrp_device_infinix_X663.git'
       DEVICE_TREE_BRANCH:
         description: 'Device Tree Branch'
         required: true
