@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2022 The Android Open Source Project
-# Copyright (C) 2022 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2025 The Android Open Source Project
+# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -16,6 +16,6 @@ PRODUCT_DEVICE := X663
 PRODUCT_NAME := twrp_X663
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix Note 11
-PRODUCT_MANUFACTURER := infinix
+PRODUCT_MANUFACTURER := Infinix
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
