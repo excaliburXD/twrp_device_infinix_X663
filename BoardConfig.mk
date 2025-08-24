@@ -159,6 +159,7 @@ TW_CUSTOM_CLOCK_POS := "70"
 TW_CUSTOM_BATTERY_POS := "790"
 TW_THEME := portrait_hdpi
 TW_DEFAULT_LANGUAGE := en
+TW_EXTRA_LANGUAGES := false
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_MAX_BRIGHTNESS := 2460
@@ -184,7 +185,7 @@ TW_NO_USB_STORAGE := false
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # Debug
-TWRP_INCLUDE_LOGCAT := true
+TWRP_INCLUDE_LOGCAT := false
 TARGET_USES_LOGD := true
 
 # FS & Tools
