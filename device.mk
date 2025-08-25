@@ -25,8 +25,6 @@ AB_OTA_PARTITIONS += \
     boot \
     dtbo \
     lk \
-    odm \
-    odm_dlkm \
     product \
     system \
     system_ext \
@@ -34,7 +32,6 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor \
     vendor \
     vendor_boot \
-    vendor_dlkm
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -56,7 +53,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 31
+PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_TARGET_VNDK_VERSION := 31
 BOARD_VNDK_VERSION := current
 

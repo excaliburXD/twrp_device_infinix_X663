@@ -20,4 +20,4 @@ product                     /product          ext4    ro                        
 /dev/block/by-name/boot      /boot             emmc    defaults                                                                                                 first_stage_mount,nofail,slotselect
 
 # Use tranfs as cache
-/dev/block/by-name/tranfs     /cache           ext4    noatime,nosuid,nodev,discard                                                                             wait,check,formattable
+/dev/block/by-name/tranfs    /cache           ext4    noatime,nosuid,nodev,discard                                                                             wait,check,formattable
