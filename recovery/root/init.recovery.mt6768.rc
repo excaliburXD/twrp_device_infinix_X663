@@ -86,31 +86,44 @@ service vendor.keymaster-4-1-trustonic /vendor/bin/hw/android.hardware.keymaster
     user nobody
     seclabel u:r:recovery:s0
 
+service tee-1-1 /vendor/bin/hw/vendor.trustonic.tee@1.1-service
+    class hal
+    user root
+    group root
+    disable
+    seclabel u:r:recovery:s0
+
 on property:crypto.ready=1
     start vendor.keymaster-4-1-trustonic
+    start tee-1-1
 
 on property:hwservicemanager.ready=true
     start mobicore
+    start tee-1-1
     start vendor.gatekeeper-1-0
     start vendor.keymaster-4-1-trustonic
 
 on property:ro.crypto.state=unsupported
     stop mobicore
+    stop tee-1-1
     stop vendor.gatekeeper-1-0
     stop vendor.keymaster-4-1-trustonic
 
 on property:ro.crypto.state=unencrypted
     stop mobicore
+    stop tee-1-1
     stop vendor.gatekeeper-1-0
     stop vendor.keymaster-4-1-trustonic
 
 on property:twrp.decrypt.done=true
     stop mobicore
+    stop tee-1-1
     stop vendor.gatekeeper-1-0
     stop vendor.keymaster-4-1-trustonic
 
 on property:crypto.ready=0
     stop mobicore
+    stop tee-1-1
     stop vendor.gatekeeper-1-0
     stop vendor.keymaster-4-1-trustonic
 
