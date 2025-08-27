@@ -17,6 +17,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Virtual A/B OTA
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 
 ENABLE_VIRTUAL_AB := true
 AB_OTA_UPDATER := true
@@ -24,17 +26,22 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
+    gz \
     lk \
-    odm \
-    odm_dlkm \
-    product \
+    tee \
+    scp \
+    logo \
+    sspm \
+    spmfw \
+    md1img \
+    preloader \
     system \
+    product \
     system_ext \
-    vbmeta_system \
-    vbmeta_vendor \
     vendor \
-    vendor_boot \
-    vendor_dlkm
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor 
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -72,14 +79,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
-
-# Keystore Hal
-PRODUCT_PACKAGES += \
-    android.system.keystore2
 
 # Fastbootd
 PRODUCT_PACKAGES += \
